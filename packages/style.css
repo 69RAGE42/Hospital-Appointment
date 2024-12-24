@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", system-ui;
+}
+
+*::selection {
+    color: rgb(220, 240, 240);
+    background-color: rgb(15, 90, 90);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+#holder {
+    width: 36rem;
+    height: 24rem;
+    border-radius: 1rem;
+    background-color: rgb(220, 240, 240);
+    border: 2px solid rgba(10, 50, 50, 0.3);
+    box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.4);
+    transform: perspective(10rem) rotateY(0deg) rotateX(0deg) scale(1.2);
+}
+
+#text-displayer-1 {
+    font-size: 36px;
+    font-weight: 400;
+    color: rgb(15, 90, 90);
+    letter-spacing: 0.5px;
+    text-align: start;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+}
+
+.num-displayer {
+    width: 1.8rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    /* border: 1px solid rgba(10, 50, 50, 0.3); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    margin: 0.5rem 1rem 0.5rem 1.5rem;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: rgb(15, 90, 90);
+    color: rgb(220, 240, 240);
+    box-shadow: inset 0px 0px 6px 1px rgba(0, 0, 0, 0.2);
+    transition: all 250ms ease-in-out;
+}
+
+#text-displayer-2,
+#text-displayer-3 {
+    color: rgb(15, 90, 90);
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-align: start;
+    padding: 0.2rem;
+}
+
+.design-displayer {
+    width: 2px;
+    height: 3rem;
+    background-color: rgb(15, 90, 90);
+    margin: 0 2.1rem 0 2.35rem;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 1px 0.5px rgba(0, 0, 0, 0.2);
+    transition: all 250ms ease-in-out;
+}
+
+#design-displayer-2 {
+    height: 4.5rem;
+}
+
+.text-field {
+    /* margin-bottom: 0.8rem; */
+    position: absolute;
+    top: 0.2rem;
+    left: 72px;
+    padding: 4px 7px;
+    width: 28rem;
+    height: 2rem;
+    color: rgb(15, 90, 90);
+    background-color: rgb(220, 240, 240);
+    border: 1.5px inset rgb(15, 90, 90);
+    border-radius: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.75px;
+    word-spacing: 1.5px;
+    font-size: 15px;
+    outline: none;
+    transition: all 200ms ease-in-out;
+    justify-content: center;
+    align-content: center;
+    /* transition: border 50ms linear; */
+}
+
+.text-field:hover {
+    box-shadow: inset 0 0 1px 2px rgba(15, 90, 90, 0.4);
+}
+
+.buttons {
+    width: 12rem;
+    height: 3rem;
+    color: rgb(15, 90, 90);
+    background-color: rgb(215, 235, 235);
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0rem 1rem;
+    border: 1.75px inset rgb(15, 90, 90);
+    border-radius: 0.6rem;
+    transition: all 200ms ease-in-out;
+    user-select: none;
+    cursor: pointer;
+}
+
+.buttons:hover {
+    border-radius: 1.5rem;
+    box-shadow: inset 0 0 1px 2px rgba(15, 90, 90, 0.4);
+}
+
+.buttons:active {
+    box-shadow: inset 0 0 4px 3px rgba(15, 90, 90, 0.4);
+}
+
+#error-msg {
+    margin: 0.4rem 0;
+    width: 35.8rem;
+    height: 1.2rem;
+    /* background-color: rgb(212, 212, 212); */
+    color: red;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+    user-select: none;
+}

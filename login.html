@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hospital Appointment | 3 Idiots</title>
+        <link rel="stylesheet" href="packages/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body>
+        <span id="holder">
+            <div id="text-displayer-1">Welcome!</div>
+
+            <div class="flex-row">
+                <div class="num-displayer" id="num-displayer-1">1</div>
+                <div id="text-displayer-2">User Name</div>
+            </div>
+
+            <div class="flex-row">
+                <div class="design-displayer" id="design-displayer-1"></div>
+                <input
+                    class="text-field"
+                    id="field-1"
+                    type="text"
+                    placeholder="Sumit Chaurasiya"
+                />
+            </div>
+
+            <div class="flex-row">
+                <div class="num-displayer" id="num-displayer-2">2</div>
+                <div id="text-displayer-3">Password</div>
+            </div>
+
+            <div class="flex-row">
+                <div class="design-displayer" id="design-displayer-2"></div>
+                <input
+                    class="text-field"
+                    id="field-2"
+                    type="text"
+                    placeholder="airoli@367"
+                />
+            </div>
+
+            <div class="flex-row">
+                <div class="num-displayer" id="num-displayer-2">3</div>
+                <button class="buttons" id="log-in" type="button">
+                    Log In
+                </button>
+                <button class="buttons" id="sign-up" type="button">
+                    Sign Up
+                </button>
+            </div>
+
+            <div id="error-msg"></div>
+        </span>
+
+        <script src="packages/verify.js"></script>
+        <script>
+            let mouseX, mouseY;
+            var totalWidth, totalHeight;
+            var transformX, transformY;
+            const sensitivity = 0.5;
+
+            window.addEventListener("mousemove", function (entries) {
+                totalWidth = document.querySelector("html").clientWidth;
+                totalHeight = document.querySelector("html").clientHeight;
+                mouseX = entries.clientX - totalWidth / 2;
+                mouseY = entries.clientY - totalHeight / 2;
+                transformX = ((-2 * mouseX) / totalWidth) * sensitivity;
+                transformY = ((2 * mouseY) / totalHeight) * sensitivity;
+
+                document.getElementById(
+                    "holder"
+                ).style.transform = `perspective(10rem) rotateY(${transformX}deg) rotateX(${transformY}deg) scale(1.2)`;
+
+                // console.log(mouseX + " - " + mouseY + " -- " + totalWidth + " -- " + totalHeight)
+                // console.log(transformX + " - " + transformY);
+            });
+        </script>
+    </body>
+</html>
