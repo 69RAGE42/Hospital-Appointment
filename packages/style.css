@@ -120,8 +120,9 @@ body {
     height: 3rem;
     color: rgb(15, 90, 90);
     background-color: rgb(215, 235, 235);
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 500;
+    position: relative;
     margin: 0rem 1rem;
     border: 1.75px inset rgb(15, 90, 90);
     border-radius: 0.6rem;
@@ -137,6 +138,52 @@ body {
 
 .buttons:active {
     box-shadow: inset 0 0 4px 3px rgba(15, 90, 90, 0.4);
+}
+
+#log-in:hover::before {
+    top: -1.5rem;
+}
+
+#log-in::before {
+    content: "hi";
+    padding: 0 6px;
+    width: max-content;
+    height: 1.5rem;
+    position: absolute;
+    top: 0rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid black;
+    border-radius: 0.75rem 0.75rem 0 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    transition: all 200ms ease-in-out;
+    z-index: -1;
+}
+
+#sign-up:hover::before {
+    top: -1.5rem;
+}
+
+#sign-up::before {
+    content: "";
+    padding: 0 6px;
+    width: max-content;
+    height: 1.5rem;
+    position: absolute;
+    top: 0rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid black;
+    border-radius: 0.75rem 0.75rem 0 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    transition: all 200ms ease-in-out;
+    z-index: -1;
 }
 
 #error-msg {
