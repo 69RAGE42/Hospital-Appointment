@@ -34,7 +34,7 @@
                     class="text-field"
                     id="field-1"
                     type="text"
-                    placeholder="Sumit Chaurasiya"
+                    placeholder="User Name"
                 />
             </div>
 
@@ -49,7 +49,7 @@
                     class="text-field"
                     id="field-2"
                     type="password"
-                    placeholder="airoli@367"
+                    placeholder="Password"
                 />
             </div>
 
@@ -57,9 +57,11 @@
                 <div class="num-displayer" id="num-displayer-2">3</div>
                 <button class="buttons" id="log-in" type="button">
                     Log In
+                    <div class="errors" id="msg-1"></div>
                 </button>
                 <button class="buttons" id="sign-up" type="button">
                     Sign Up
+                    <div class="errors" id="msg-2"></div>
                 </button>
             </div>
 
@@ -71,7 +73,7 @@
             let mouseX, mouseY;
             var totalWidth, totalHeight;
             var transformX, transformY;
-            const sensitivity = 0.5;
+            const sensitivity = 0.75;
 
             window.addEventListener("mousemove", function (entries) {
                 totalWidth = document.querySelector("html").clientWidth;
@@ -84,9 +86,6 @@
                 document.getElementById(
                     "holder"
                 ).style.transform = `perspective(10rem) rotateY(${transformX}deg) rotateX(${transformY}deg) scale(1.2)`;
-
-                // console.log(mouseX + " - " + mouseY + " -- " + totalWidth + " -- " + totalHeight)
-                // console.log(transformX + " - " + transformY);
             });
         </script>
     </body>

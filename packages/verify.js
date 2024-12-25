@@ -37,6 +37,10 @@ function checkForUserName() {
         passwordUnmatched();
         disableLogIn();
         disableSignUp();
+        document.querySelector("#msg-1").innerHTML = "Username Field Empty!";
+        document.querySelector("#msg-1").style.display = "flex";
+        document.querySelector("#msg-2").innerHTML = "Username Field Empty!";
+        document.querySelector("#msg-2").style.display = "flex";
     }
 }
 
@@ -78,21 +82,29 @@ var signup = document.getElementById("sign-up");
 function enableLogIn() {
     login.disabled = "false";
     login.style.cursor = "pointer";
+    document.querySelector("#msg-1").innerHTML = "";
+    document.querySelector("#msg-1").style.display = "none";
 }
 
 function disableLogIn() {
     login.disabled = "true";
     login.style.cursor = "not-allowed";
+    document.querySelector("#msg-1").innerHTML = "Invalid Username!";
+    document.querySelector("#msg-1").style.display = "flex";
 }
 
 function enableSignUp() {
     signup.disabled = "false";
     signup.style.cursor = "pointer";
+    document.querySelector("#msg-2").innerHTML = "";
+    document.querySelector("#msg-2").style.display = "none";
 }
 
 function disableSignUp() {
     signup.disabled = "true";
     signup.style.cursor = "not-allowed";
+    document.querySelector("#msg-2").innerHTML = "Username already taken!";
+    document.querySelector("#msg-2").style.display = "flex";
 }
 
 // Graphic Functions
@@ -137,7 +149,7 @@ function passwordUnmatched() {
     b.style.filter = "";
 }
 
-// Test
+// Starting Functions
 
 setInterval(function () {
     checkForUserName();
@@ -146,6 +158,3 @@ setInterval(function () {
 
 disableLogIn();
 disableSignUp();
-
-// userNameMatched();
-// passwordMatched();
